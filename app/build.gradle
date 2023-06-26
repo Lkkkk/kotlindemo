@@ -1,0 +1,59 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+}
+
+android {
+    compileSdkVersion 32
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.kk.kotlindemo"
+        minSdkVersion 21
+        targetSdkVersion 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    api 'androidx.constraintlayout:constraintlayout:2.0.4'
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    // Anko Commons
+    implementation "org.jetbrains.anko:anko-commons:$anko_version"
+    //单元测试
+    testImplementation 'org.jetbrains.kotlin:kotlin-test'
+    //反射
+    implementation "org.jetbrains.kotlin:kotlin-reflect"
+
+    implementation 'androidx.core:core-ktx:1.7.0'
+    implementation 'androidx.appcompat:appcompat:1.2.0'
+    implementation 'com.google.android.material:material:1.1.0'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.2'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
+    //okhttp
+    implementation 'com.squareup.okhttp3:okhttp:4.9.3'
+    //gson
+    implementation 'com.google.code.gson:gson:2.8.9'
+
+
+}
